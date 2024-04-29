@@ -1,0 +1,87 @@
+/* Improved table headers and cells for more space and center alignment */
+.request-statement th,
+.request-statement td {
+    padding: 20px; /* More padding for larger cells */
+    text-align: center;
+    border-bottom: 2px solid #ddd; /* Make the bottom border slightly thicker for emphasis */
+}
+
+/* Full-width table with more internal space */
+.request-statement table {
+    width: 100%;
+    border-collapse: separate; /* Adds spacing between cells */
+    border-spacing: 0 10px; /* Space between rows */
+}
+
+/* Vibrant color for table headers */
+.request-statement th {
+    background-color: #007DC5;
+    color: white;
+    padding: 15px; /* Larger padding for headers */
+}
+
+/* Styling for the calendar input fields */
+.request-statement input[type="date"] {
+    border: 2px solid #007DC5; /* Slightly thicker border for emphasis */
+    padding: 8px; /* Larger button for better interaction */
+    line-height: 1.5;
+    color: #007DC5;
+    cursor: pointer;
+    font-size: 1rem; /* Adjust font size for better readability */
+}
+
+/* Hover and focus effects for inputs */
+.request-statement input[type="date"]:hover,
+.request-statement input[type="date"]:focus {
+    background-color: #007DC5;
+    color: white;
+    border-color: #005ea0;
+    outline: none;
+}
+
+/* Rounded corners for inputs and removal of default styles */
+.request-statement input[type="date"] {
+    border-radius: 5px; /* Slightly larger radius for rounded corners */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+/* Add a custom arrow indicator for date pickers */
+.request-statement input[type="date"]::-webkit-calendar-picker-indicator {
+    color: #007DC5;
+    opacity: 1;
+}
+
+/* Flexbox container for center alignment */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto; /* Ensures the container is centered */
+}
+
+/* Flexbox container for radio buttons */
+.radio-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Label color for radio buttons */
+.request-statement label {
+    color: #007DC5;
+    font-weight: bold; /* Makes the text bold */
+    margin-right: 10px; /* Adds space to the right of the label */
+    cursor: pointer; /* Indicates that the label is clickable */
+}
+
+/* Space around the radio buttons for a cleaner look */
+.request-statement input[type="radio"] {
+    margin: 0 5px; /* Adds horizontal margin for spacing */
+}
+
+/* Visual cue for hovering over labels */
+.request-statement label:hover {
+    text-decoration: underline; /* Underlines label text on hover */
+}

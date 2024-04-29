@@ -1,0 +1,64 @@
+<div class="overview-page">
+    <a *ngIf="!showOverviewData" (click)="showLoanData()" class="back-link">Back</a>
+    <mat-tab-group class="tabbing-group">
+        <mat-tab label="Overview">
+            <div class="container tabbing-space">
+                <table class="overview-table">
+                    <tbody>
+                        <tr>
+                            <th class="readonly-label">Application ID:</th>
+                            <td>{{ data.appId }}</td>
+                            <th class="readonly-label">Mobile:</th>
+                            <td>{{ data.mobile }}</td>
+                        </tr>
+                        <tr>
+                            <th class="readonly-label">Company:</th>
+                            <td>{{ data.companyName }}</td>
+                            <th class="readonly-label">Company Pan:</th>
+                            <td>{{ data.companyPan }}</td>
+                        </tr>
+                        <tr>
+                            <th class="readonly-label">Mail:</th>
+                            <td>{{ data.mail }}</td>
+                            <th class="readonly-label">Tenure:</th>
+                            <td>{{ data.tenure }}</td>
+                        </tr>
+                        <tr>
+                            <th class="readonly-label">Loan Amount:</th>
+                            <td>{{ data.loanAmt }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </mat-tab>
+		<mat-tab label="Business Product">
+            <business-product></business-product>
+            <!-- Your form content here -->
+        </mat-tab>
+        <mat-tab label="Company Details">
+            <company-details></company-details>
+            <!-- Your form content here -->
+        </mat-tab>
+        <mat-tab label="Company Address">
+            <company-address></company-address>
+            <!-- Your form content here -->
+        </mat-tab>
+		<mat-tab label="Assurance Details">
+            <app-assurancedetails></app-assurancedetails>
+            <!-- Your form content here -->
+        </mat-tab>
+		<mat-tab label="Sales Report">
+			<app-salesreport></app-salesreport>
+		</mat-tab>
+		<mat-tab label="Transactions">
+			<app-trnsactions></app-trnsactions>
+		</mat-tab>
+        <mat-tab label="Txn Filters">
+			<app-transactionfilters></app-transactionfilters>
+		</mat-tab>
+		<mat-tab label="Txn Statement">
+			<app-transacation-statement></app-transacation-statement>
+		</mat-tab>
+        <!-- ... (Other tabs) ... app-transacation-statement-->
+    </mat-tab-group>
+</div>

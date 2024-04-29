@@ -1,0 +1,68 @@
+<div class="request-statement">
+  <h2>View Statement</h2>
+  <div>
+    <label>
+      <input type="radio" name="duration" (change)="onDurationChange('last month')" />
+      Last Month
+    </label>
+    <label>
+      <input type="radio" name="duration" (change)="onDurationChange('last 3 months')" />
+      Last 3 Months
+    </label>
+    <label>
+      <input type="radio" name="duration" (change)="onDurationChange('last 6 months')" />
+      Last 6 Months
+    </label>
+    <label>
+      <input type="radio" name="duration" (change)="onDurationChange('last year')" />
+      Last Year
+    </label>
+  </div>
+<h6>-------------------------------------------------------------------------OR-------------------------------------------------------------------------------------------------------- </h6>
+  <div>
+    <label>Select By Date Range</label><br>
+    <input type="date" name="startDate" [(ngModel)]="startDate" (change)="onCustomDateChange()" />
+    <input type="date" name="endDate" [(ngModel)]="endDate" (change)="onCustomDateChange()" />
+  </div>
+  <!-- <button (click)="fetchTransactions()">Request Statement</button> -->
+
+  <!-- Display Transactions -->
+     <!-- Display Transactions in a Table -->
+     <div *ngIf="transactions && transactions.length">
+      <h3>Transactions:</h3>
+      <table>
+        <thead>
+          <tr>
+            <!-- <th>App ID</th> -->
+            <th>Date</th>
+            <th>Activity</th>
+            <th>Transaction ID</th>
+            <th>Comment</th>
+            <th>Debit Amount</th>
+            <th>Credit Amount</th>
+            <th>Transaction Breakup</th>
+            <th>Status</th>
+            <th>Instrument</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let transaction of transactions">
+            <!-- <td>{{ transaction.appid }}</td> -->
+            <td>{{ transaction.transactionDate | date }}</td>
+            <td>{{ transaction.activity }}</td>
+            <td>{{ transaction.txnId }}</td>
+            <td>{{ transaction.comment }}</td>
+            <td>{{ transaction.debtAmt | currency:'INR' }}</td>
+            <td>{{ transaction.creditAmt | currency:'INR' }}</td>
+            <td>{{ transaction.transactionBreakup }}</td>
+            <td>{{ transaction.transactionStatus }}</td>
+            <td>{{ transaction.instrument }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <!-- Add any additional error or empty state messaging -->
+    <div *ngIf="transactions && !transactions.length">
+      <p>No transactions found for the selected period.</p>
+    </div>
+</div>

@@ -1,0 +1,94 @@
+<div class="transaction-filters-container">
+    <!-- Initial filter buttons -->
+    <button class="btn btn-primary" (click)="showStatusOptions = !showStatusOptions; showInstrumentOptions = false">Status</button>
+    <button class="btn btn-primary" (click)="showInstrumentOptions = !showInstrumentOptions; showStatusOptions = false">Instrument</button>
+
+    <!-- Dropdown menu for Status filters -->
+    <div class="dropdown" *ngIf="showStatusOptions">
+        <h6 class="dropdown-header">Status</h6>
+        <!-- ... (Status checkboxes) ... -->
+        <div class="dropdown-item">
+            <input type="checkbox" id="success" [(ngModel)]="filters.success">
+            <label for="success">Success</label>
+        </div>
+        <div class="dropdown-item">
+            <input type="checkbox" id="pending" [(ngModel)]="filters.pending">
+            <label for="pending">Pending</label>
+        </div>
+        <div class="dropdown-item">
+            <input type="checkbox" id="failed" [(ngModel)]="filters.failed">
+            <label for="failed">Failed</label>
+        </div>
+        <div class="dropdown-item">
+            <input type="checkbox" id="cancelled" [(ngModel)]="filters.cancelled">
+            <label for="cancelled">Cancelled</label>
+        </div>
+        <!-- ... (Other Status checkboxes) ... -->
+
+        <div class="dropdown-divider"></div>
+        <button class="btn btn-success" (click)="fetchFilteredTransactions()">Apply</button>
+        <button class="btn btn-light" (click)="clearFilters()">Clear All</button>
+    </div>
+
+    <!-- Dropdown menu for Instrument filters -->
+    <div class="dropdown" *ngIf="showInstrumentOptions">
+        <h6 class="dropdown-header">Instrument</h6>
+        <!-- ... (Instrument checkboxes) ... -->
+        <div class="dropdown-item">
+            <input type="checkbox" id="creditCard" [(ngModel)]="filters.creditCard">
+            <label for="creditCard">Credit Card</label>
+        </div>
+        <div class="dropdown-item">
+            <input type="checkbox" id="debitCard" [(ngModel)]="filters.debitCard">
+            <label for="debitCard">Debit Card</label>
+        </div>
+        <div class="dropdown-item">
+            <input type="checkbox" id="upi" [(ngModel)]="filters.upi">
+            <label for="upi">UPI</label>
+        </div>
+        <div class="dropdown-item">
+            <input type="checkbox" id="wallet" [(ngModel)]="filters.wallet">
+            <label for="wallet">Wallet</label>
+        </div>
+        <!-- ... (Other Instrument checkboxes) ... -->
+
+        <div class="dropdown-divider"></div>
+        <button class="btn btn-success" (click)="fetchFilteredTransactions()">Apply</button>
+        <button class="btn btn-light" (click)="clearFilters()">Clear All</button>
+    </div>
+
+    <!-- Rest of your component HTML -->
+    <!-- ... (Table and No transactions message) ... -->
+    <table *ngIf="transactions && transactions.length > 0" class="table">
+        <thead>
+            <tr>
+                <!-- List out the columns based on the fields in your transaction data. I'm assuming some generic fields like 'id', 'amount', 'date', etc. -->
+                <th>Txn Date</th>
+                <th>Activity</th>
+                <th>Instrument</th>
+                <th>Txn Id</th>
+                <th>comment</th>
+                <th>Debit Amt</th>
+                <th>Credit Amt</th>
+                <th>Txn Breakup</th>
+                <th>Txn Status</th>
+                <!-- ... (add more columns as per your data structure) ... -->
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let transaction of transactions">
+                <!-- Populate rows based on the fields in your transaction data. -->
+                <td>{{transaction.transactionDate}}</td>
+                <td>{{transaction.activity}}</td>
+                <td>{{transaction.instrument}}</td>
+                <td>{{transaction.txnId}}</td>
+                <td>{{transaction.comment}}</td>
+                <td>{{transaction.debtAmt}}</td>
+                <td>{{transaction.creditAmt}}</td>
+                <td>{{transaction.transactionBreakup}}</td>
+                <td>{{transaction.transactionStatus}}</td>
+                <!-- ... (add more columns data as per your data structure) ... -->
+            </tr>
+        </tbody>
+    </table>
+</div>

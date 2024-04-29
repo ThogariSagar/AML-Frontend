@@ -1,0 +1,57 @@
+select{
+	display: block;
+}
+.search-field{
+	min-width: 240px;
+}
+.taskboard-wrapper{
+	display: flex;
+	margin-top: 30px;
+}
+.taskboard-data-section{
+	flex: 0 0 65%;
+}
+.data-export-section{
+	flex: 0 0 34%;
+	border: 1px solid #eee;
+	box-shadow: 0px 5px 5px -3px rgb(0 0 0 / 20%), 0px 8px 10px 1px rgb(0 0 0 / 14%), 0px 3px 14px 2px rgb(0 0 0 / 12%);
+    margin-left: auto;
+}
+.export-field-wrapper{
+	padding: 20px;
+}
+.taskboard-data-section table{
+	height: 100%;
+}
+.btn-submit{
+	margin-top: 10px;
+}
+.data-export-section .mat-form-field{
+    display: block;
+}
+.export-title{
+	margin: 0;
+	padding: 20px;
+	background-color: #007DC5;
+	color: #fff;
+}
+.taskboard-search  .mat-form-field{
+	margin-left: 20px;
+	display: blue;
+}
+/* Popup css */
+.cdk-global-overlay-wrapper .cdk-overlay-pane{
+	max-width: 400px !important;
+	width: 100% !important;
+}
+.field-select-type{
+	display: block;
+}
+.empty-code-field .form-label{
+	max-width: 90px;
+	width: 100%;
+	display: inline-block;
+}
+.empty-code-inp{
+	width: calc(100% - 90px);
+}

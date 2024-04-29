@@ -1,0 +1,82 @@
+.transaction-filters-container {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+/* Styling the dropdown and toggle */
+.dropdown {
+    margin-bottom: 20px;
+}
+
+/* Styling the Status and Instrument buttons */
+.btn-primary {
+    background-color: #007DC5;
+    border-color: #007DC5;
+    color: #ffffff;
+    font-size: 16px;
+    padding: 8px 15px;
+    margin-right: 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #0065a4; /* Slightly darker shade for hover effect */
+    border-color: #005681;
+}
+
+/* Styling the dropdown items */
+.dropdown-item label {
+    margin-left: 10px; /* Adds space between checkbox and label */
+}
+
+/* Styling the apply and clear buttons */
+.btn-success, .btn-light {
+    background-color: #007DC5;
+    border-color: #007DC5;
+    padding: 8px 15px;
+    margin-top: 5px;
+    margin-right: 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.btn-success:hover {
+    background-color: #0065a4;
+    border-color: #0065a4;
+}
+
+.btn-light {
+    background-color: #ffffff;
+    color: #007DC5;
+    border-color: #007DC5;
+}
+
+.btn-light:hover {
+    background-color: #f2f2f2;
+    border-color: #0065a4;
+    color: #0065a4;
+}
+
+/* Styling the table */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th {
+    background-color: #007DC5;
+    color: #ffffff;
+    padding: 10px;
+    text-align: left;
+}
+
+.table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
